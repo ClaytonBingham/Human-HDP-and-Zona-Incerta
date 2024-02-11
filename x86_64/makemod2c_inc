@@ -1,0 +1,25 @@
+
+./AXNODE.c: ../AXNODE.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) AXNODE.mod -o "/home/clayton/Desktop/Projects/ROOTS_HumanHDP/HumanHDP_simulations/thresholdExperiments/x86_64")
+
+./AXNODE.o: ./AXNODE.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./AXNODEX.c: ../AXNODEX.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) AXNODEX.mod -o "/home/clayton/Desktop/Projects/ROOTS_HumanHDP/HumanHDP_simulations/thresholdExperiments/x86_64")
+
+./AXNODEX.o: ./AXNODEX.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./na12.c: ../na12.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\n"
+	(cd ".."; MODLUNIT=$(NRNUNITS) $(NOCMODL) na12.mod -o "/home/clayton/Desktop/Projects/ROOTS_HumanHDP/HumanHDP_simulations/thresholdExperiments/x86_64")
+
+./na12.o: ./na12.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
